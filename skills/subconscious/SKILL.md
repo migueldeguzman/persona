@@ -20,7 +20,7 @@ It doesn't override. It suggests. You decide what to do with it.
 
 Determine the active persona's workspace. Check these sources in order:
 
-1. **Agent registry** at `$HOME/.openclaw/agents.json` — if it exists, look up the persona name
+1. **Agent registry** at `$HOME/.persona/agents.json` — if it exists, look up the persona name
 2. **Convention** — check if `$HOME/{persona-name}/SUBCONSCIOUS.md` exists
 3. **Ask the user** — if neither works, ask where the workspace is
 

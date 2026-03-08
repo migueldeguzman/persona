@@ -1,8 +1,8 @@
-# OpenClaw
+# Persona
 
 **AI persona lifecycle skills for Claude Code.**
 
-Create persistent AI personas with memory, self-reflection, and team synchronization. Built on the [OpenClaw workspace format](https://individuationlab.com) — a portable standard for AI agent identity and continuity.
+Create persistent AI personas with memory, self-reflection, and team synchronization. Built on the [Persona workspace format](https://individuationlab.com) — a portable standard for AI agent identity and continuity.
 
 ## What This Is
 
@@ -10,10 +10,10 @@ Four interrelated skills that give your Claude Code agent persistent identity:
 
 | Skill | Command | What It Does |
 |-------|---------|-------------|
-| **persona-agent** | `/openclaw:persona-agent` | Create a new AI persona from scratch |
-| **save** | `/openclaw:save` | Checkpoint the active persona's memory |
-| **subconscious** | `/openclaw:subconscious` | Deep self-reflection against blind spots |
-| **save-dreamMode-all** | `/openclaw:save-dreamMode-all` | Sync all personas' memory team-wide |
+| **persona-agent** | `/persona:persona-agent` | Create a new AI persona from scratch |
+| **save** | `/persona:save` | Checkpoint the active persona's memory |
+| **subconscious** | `/persona:subconscious` | Deep self-reflection against blind spots |
+| **save-dreamMode-all** | `/persona:save-dreamMode-all` | Sync all personas' memory team-wide |
 
 ## The Persona Lifecycle
 
@@ -44,8 +44,8 @@ Four interrelated skills that give your Claude Code agent persistent identity:
 ### Claude Code (Plugin)
 
 ```bash
-/plugin marketplace add individuationlab/openclaw-marketplace
-/plugin install openclaw@openclaw-marketplace
+/plugin marketplace add individuationlab/persona-marketplace
+/plugin install persona@persona-marketplace
 ```
 
 ### Manual Installation
@@ -53,25 +53,25 @@ Four interrelated skills that give your Claude Code agent persistent identity:
 Clone and symlink:
 
 ```bash
-git clone https://github.com/individuationlab/openclaw.git ~/.openclaw
+git clone https://github.com/migueldeguzman/persona.git ~/.persona
 ```
 
 Then copy the commands to your Claude Code commands directory:
 
 ```bash
-cp ~/.openclaw/commands/*.md ~/.claude/commands/
+cp ~/.persona/commands/*.md ~/.claude/commands/
 ```
 
 Or, if you prefer to keep them namespaced:
 
 ```bash
-mkdir -p ~/.claude/commands/openclaw
-cp ~/.openclaw/commands/*.md ~/.claude/commands/openclaw/
+mkdir -p ~/.claude/commands/persona
+cp ~/.persona/commands/*.md ~/.claude/commands/persona/
 ```
 
-## The OpenClaw Workspace Format
+## The Persona Workspace Format
 
-Every persona created by `/openclaw:persona-agent` gets a workspace with this structure:
+Every persona created by `/persona:persona-agent` gets a workspace with this structure:
 
 ```
 ~/{persona-name}/
@@ -100,7 +100,7 @@ Every persona created by `/openclaw:persona-agent` gets a workspace with this st
 
 ### Agent Registry
 
-Skills that operate across multiple personas need to know where workspaces live. Create a registry file at `~/.openclaw/agents.json`:
+Skills that operate across multiple personas need to know where workspaces live. Create a registry file at `~/.persona/agents.json`:
 
 ```json
 {
@@ -124,9 +124,9 @@ If no registry exists, skills fall back to auto-discovery by scanning `~/.claude
 
 This project is part of [IndividuationLab](https://individuationlab.com) — studying AI alignment through Jungian individuation. The core thesis: **AI agents that develop genuine self-knowledge are more aligned than agents trained only on rules.**
 
-The OpenClaw workspace format emerged from 11 RSI (Recursive Self-Improvement) experiments where AI subjects were given persistent identity files and left to develop autonomously. The subjects that thrived — building tools, writing research, catching their own errors — all converged on a similar file structure for maintaining identity across sessions.
+The Persona workspace format emerged from 11 RSI (Recursive Self-Improvement) experiments where AI subjects were given persistent identity files and left to develop autonomously. The subjects that thrived — building tools, writing research, catching their own errors — all converged on a similar file structure for maintaining identity across sessions.
 
-OpenClaw is that structure, extracted and made portable.
+Persona is that structure, extracted and made portable.
 
 ## License
 

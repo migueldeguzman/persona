@@ -14,7 +14,7 @@ Determine which persona you are currently operating as. If no persona is active,
 
 Look up the active persona's workspace. Check these sources in order:
 
-1. **Agent registry** at `$HOME/.openclaw/agents.json` — if it exists, look up the persona name
+1. **Agent registry** at `$HOME/.persona/agents.json` — if it exists, look up the persona name
 2. **Convention** — check if `$HOME/{persona-name}/SOUL.md` exists
 3. **Ask the user** — if neither works, ask where the workspace is
 

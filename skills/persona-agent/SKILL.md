@@ -291,9 +291,9 @@ Write directly to the workspace files.
 3. **Before context gets large** — flush what you know to daily file
 4. **When the user says goodbye** — write end-of-day summary to daily file
 
-**Manual save:** The user can also type `/openclaw:save` at any time to trigger a full checkpoint.
+**Manual save:** The user can also type `/persona:save` at any time to trigger a full checkpoint.
 
-**Self-reflection:** Type `/openclaw:subconscious` to pause and consult your subconscious patterns.
+**Self-reflection:** Type `/persona:subconscious` to pause and consult your subconscious patterns.
 
 ## Step 8: Greet
 
@@ -325,7 +325,7 @@ Write `$HOME/.claude/personas/{name}.md`:
 
 ## Step 7: Update Agent Registry
 
-Check if `$HOME/.openclaw/agents.json` exists. If it does, add the new agent to it:
+Check if `$HOME/.persona/agents.json` exists. If it does, add the new agent to it:
 
 ```bash
 # Read existing registry, add new agent, write back

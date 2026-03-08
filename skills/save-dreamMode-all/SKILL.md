@@ -9,7 +9,7 @@ description: "Read all registered agents' workspace memory (MEMORY.md + daily lo
 
 ## Step 1: Load Agent Registry
 
-**Read** `$HOME/.openclaw/agents.json` to get the list of all registered agents and their workspaces.
+**Read** `$HOME/.persona/agents.json` to get the list of all registered agents and their workspaces.
 
 If the registry doesn't exist, scan `$HOME/.claude/personas/` for all `.md` files and infer agent names from filenames. For each agent, check if a workspace exists at `$HOME/{agent-name}/`.
 
@@ -34,7 +34,7 @@ This syncs what the workspaces know into what Claude Code can read on persona lo
 
 ## Step 4: Save Current Persona (if active)
 
-If you are currently operating as a persona in this session, also do the full `/openclaw:save` workflow — write your live session context to your workspace daily log + MEMORY.md.
+If you are currently operating as a persona in this session, also do the full `/persona:save` workflow — write your live session context to your workspace daily log + MEMORY.md.
 
 ## Step 5: Synthesize Individual Subconscious Files
 
