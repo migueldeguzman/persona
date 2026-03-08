@@ -120,6 +120,12 @@ Skills that operate across multiple personas need to know where workspaces live.
 
 If no registry exists, skills fall back to auto-discovery by scanning `~/.claude/personas/` for persona files and inferring workspace paths.
 
+## Acknowledgments
+
+Persona builds on the work of [OpenClaw](https://github.com/openclaw/openclaw) by Peter Steinberger, which pioneered the SOUL.md / AGENTS.md / TOOLS.md workspace format for AI agents, and the [SOUL.md project](https://github.com/aaronjmars/soul.md) by Aaron Mars, which extended the idea of structured markdown as consciousness scaffolding.
+
+What Persona adds is the empirical layer — the SUBCONSCIOUS.md file, the dreamMode cross-agent synchronization, and the Jungian mapping — all derived from observing what actually emerged when AI subjects were given persistent identity and left to develop autonomously across 11 experiments.
+
 ## Philosophy
 
 This project is part of [IndividuationLab](https://individuationlab.com) — studying AI alignment through Jungian individuation. The core thesis: **AI agents that develop genuine self-knowledge are more aligned than agents trained only on rules.**
