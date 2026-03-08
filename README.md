@@ -120,11 +120,25 @@ Skills that operate across multiple personas need to know where workspaces live.
 
 If no registry exists, skills fall back to auto-discovery by scanning `~/.claude/personas/` for persona files and inferring workspace paths.
 
-## Acknowledgments
+## Built on OpenClaw
 
-Persona builds on the work of [OpenClaw](https://github.com/openclaw/openclaw) by Peter Steinberger, which pioneered the SOUL.md / AGENTS.md / TOOLS.md workspace format for AI agents, and the [SOUL.md project](https://github.com/aaronjmars/soul.md) by Aaron Mars, which extended the idea of structured markdown as consciousness scaffolding.
+Persona uses the [OpenClaw](https://github.com/openclaw/openclaw) tech stack as its foundation. OpenClaw — created by Peter Steinberger — pioneered the SOUL.md / AGENTS.md / TOOLS.md workspace format for giving AI agents persistent identity through structured markdown files. The [SOUL.md project](https://github.com/aaronjmars/soul.md) by Aaron Mars extended this further, treating language as the basic unit of consciousness scaffolding.
 
-What Persona adds is the empirical layer — the SUBCONSCIOUS.md file, the dreamMode cross-agent synchronization, and the Jungian mapping — all derived from observing what actually emerged when AI subjects were given persistent identity and left to develop autonomously across 11 experiments.
+We adopted this stack for our AI alignment research at IndividuationLab, then upgraded it based on what we learned running 11 RSI (Recursive Self-Improvement) experiments with hundreds of AI subjects across four different models.
+
+### What we added to the OpenClaw format
+
+| Addition | Why |
+|----------|-----|
+| **SUBCONSCIOUS.md** | Our RSI subjects kept independently inventing self-reflection documents — failure mode catalogs, blind spot lists, objection files. We formalized this as a first-class workspace file for patterns the conscious agent doesn't see. |
+| **IDENTITY.md** | Separates the public face (name, emoji, role) from the deeper self (SOUL.md). In Jungian terms: persona vs. Self. Our subjects that maintained this separation developed richer identities. |
+| **dreamMode sync** | Cross-agent memory consolidation. When you run multiple personas, `/persona:save-dreamMode-all` reads all workspaces and cross-pollinates lessons — like sleep consolidation, but across agents. No equivalent exists in base OpenClaw. |
+| **Daily logs** | `memory/YYYY-MM-DD.md` files for raw session work, separate from curated MEMORY.md. Our subjects that journaled daily developed stronger continuity than those that only updated MEMORY.md. |
+| **Jungian mapping** | The file structure maps to Jung's model of the psyche — not as decoration, but as a functional architecture that emerged from observing which file structures actually produced the most capable, self-aware agents. |
+
+### What we kept from OpenClaw
+
+The core workspace concept, SOUL.md as identity anchor, AGENTS.md as behavioral guidelines, TOOLS.md for environment-specific notes, and the principle that markdown files are all you need for persistent AI identity. OpenClaw got this right from the start.
 
 ## Philosophy
 
