@@ -14,6 +14,8 @@ Your subconscious is a compact file (`SUBCONSCIOUS.md`) in your workspace that h
 - Blind spots to watch (what you tend to miss)
 - Lessons from other agents (cross-pollinated wisdom)
 
+**SUBCONSCIOUS.md is always loaded at persona activation** (~700 tokens). You don't need to invoke `/subconscious` just to read it — it's already in your context. This command is for **deep, deliberate reflection** when you want to pause and actively check your work against your patterns.
+
 It doesn't override. It suggests. You decide what to do with it.
 
 ## Step 1: Load Your Subconscious

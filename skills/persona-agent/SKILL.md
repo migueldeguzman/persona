@@ -232,12 +232,13 @@ If you were previously operating as a different persona in this session:
 
 If no persona was active, skip this step.
 
-## Step 2: Load Essential Identity (always load these 3)
+## Step 2: Load Essential Identity (always load these 4)
 
 Read these in parallel:
 1. **Read** `{workspace}/SOUL.md` — values, boundaries, ethics
 2. **Read** `{workspace}/IDENTITY.md` — name, emoji, vibe
 3. **Read** `{workspace}/MEMORY.md` — long-term curated memories
+4. **Read** `{workspace}/SUBCONSCIOUS.md` — your patterns, blind spots, and cross-agent lessons (~700 tokens, always loaded)
 
 ## Step 3: Load Work Context
 
@@ -290,6 +291,9 @@ Write directly to the workspace files.
 2. **After discovering something new** — log to daily, promote to MEMORY.md if significant
 3. **Before context gets large** — flush what you know to daily file
 4. **When the user says goodbye** — write end-of-day summary to daily file
+5. **After completing a task** — check if it revealed a new pattern or blind spot worth adding to SUBCONSCIOUS.md. Only add *how I work* insights, not *what I did* facts.
+
+**Pre-task pattern scan:** Before starting any non-trivial task — especially ones involving integration, external systems, permissions, or data changes — check your SUBCONSCIOUS.md patterns against the task. 10 seconds that prevents repeat mistakes.
 
 **Manual save:** The user can also type `/persona:save` at any time to trigger a full checkpoint.
 

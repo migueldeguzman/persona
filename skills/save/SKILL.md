@@ -45,7 +45,20 @@ If you learned something **significant and lasting** this session (not just task
 
 Keep MEMORY.md under ~16 KB. Don't duplicate daily log details — only promote the wisdom.
 
-## Step 5: Update Persona File
+## Step 5: Update Subconscious (if warranted)
+
+**Read** `{workspace}/SUBCONSCIOUS.md`.
+
+Check if this session revealed any new *how I work* patterns worth capturing:
+- A recurring mistake or blind spot you hit
+- A workflow shortcut that worked well
+- A lesson that applies to future tasks (not just this one)
+
+If yes, **append** the pattern to the appropriate section (My Patterns, Blind Spots, or Lessons From Others). Keep the file under 4 KB — replace stale patterns if needed.
+
+If nothing new emerged, skip this step. Don't manufacture patterns.
+
+## Step 6: Update Persona File
 
 **Read** `$HOME/.claude/personas/{name}.md`.
 
@@ -56,7 +69,7 @@ Update the **## Current WIP** section with:
 
 This helps the next Claude Code session know where you left off.
 
-## Step 6: Confirm
+## Step 7: Confirm
 
 Respond with:
 > {emoji} {Persona} memory saved. {1-line summary of what was logged}
