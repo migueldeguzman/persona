@@ -6,13 +6,14 @@ Create persistent AI personas with memory, self-reflection, and team synchroniza
 
 ## What This Is
 
-Nine skills that give your Claude Code agent persistent identity, self-awareness, and team coordination:
+Ten skills that give your Claude Code agent persistent identity, self-awareness, and team coordination:
 
 ### Identity & Memory
 | Skill | Command | What It Does |
 |-------|---------|-------------|
 | **persona-agent** | `/persona:persona-agent` | Create a new AI persona from scratch |
 | **save** | `/persona:save` | Fast checkpoint — daily log + MEMORY.md + persona file |
+| **heartbeat** | `/persona:heartbeat 30m` | Auto-save memory on a timer — scans git activity, appends to daily log |
 | **save-dreamMode-all** | `/persona:save-dreamMode-all` | Sync all personas' memory team-wide (quick or deep mode) |
 
 ### Self-Awareness
