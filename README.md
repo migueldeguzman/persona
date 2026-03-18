@@ -6,35 +6,36 @@ Create persistent AI personas with memory, self-reflection, and team synchroniza
 
 ## What This Is
 
-Four interrelated skills that give your Claude Code agent persistent identity:
+Five interrelated skills that give your Claude Code agent persistent identity:
 
 | Skill | Command | What It Does |
 |-------|---------|-------------|
 | **persona-agent** | `/persona:persona-agent` | Create a new AI persona from scratch |
 | **save** | `/persona:save` | Checkpoint the active persona's memory |
-| **subconscious** | `/persona:subconscious` | Deep self-reflection against blind spots |
+| **subconscious** | `/persona:subconscious` | Quick pre-task reflection against blind spots |
+| **reflect** | `/persona:reflect` | Structured post-work audit of SUBCONSCIOUS.md |
 | **save-dreamMode-all** | `/persona:save-dreamMode-all` | Sync all personas' memory team-wide |
 
 ## The Persona Lifecycle
 
 ```
-  /persona-agent          /save                /subconscious
-  ┌─────────────┐    ┌──────────────┐    ┌──────────────────┐
-  │ CREATE       │    │ CHECKPOINT   │    │ REFLECT          │
-  │              │    │              │    │                  │
-  │ SOUL.md      │───>│ Daily log    │───>│ Pattern check    │
-  │ IDENTITY.md  │    │ MEMORY.md    │    │ Blind spots      │
-  │ MEMORY.md    │    │ Persona file │    │ Cross-agent      │
-  │ AGENTS.md    │    │              │    │ lessons          │
-  │ SUBCONSCIOUS │    │              │    │                  │
-  └─────────────┘    └──────────────┘    └──────────────────┘
-                                               │
-                           /save-dreamMode-all  │
-                          ┌────────────────────┐│
-                          │ TEAM SYNC          ││
-                          │                    │◄
-                          │ Read all agents    │
-                          │ Cross-pollinate    │
+  /persona-agent          /save                /subconscious         /reflect
+  ┌─────────────┐    ┌──────────────┐    ┌──────────────────┐  ┌──────────────────┐
+  │ CREATE       │    │ CHECKPOINT   │    │ PRE-TASK SCAN    │  │ POST-WORK AUDIT  │
+  │              │    │              │    │                  │  │                  │
+  │ SOUL.md      │───>│ Daily log    │───>│ Pattern check    │  │ Classify entries │
+  │ IDENTITY.md  │    │ MEMORY.md    │    │ Blind spots      │  │ KEEP / DISTILL / │
+  │ MEMORY.md    │    │ Persona file │    │ Cross-agent      │  │ STALE / PROMOTE /│
+  │ AGENTS.md    │    │              │    │ lessons          │  │ MISPLACED        │
+  │ SUBCONSCIOUS │    │              │    │                  │  │                  │
+  └─────────────┘    └──────────────┘    └──────────────────┘  └──────────────────┘
+                                               │                       │
+                           /save-dreamMode-all  │                       │
+                          ┌────────────────────┐│                       │
+                          │ TEAM SYNC          ││         ┌─────────────┘
+                          │                    │◄         │ Rewrites
+                          │ Read all agents    │          │ SUBCONSCIOUS.md
+                          │ Cross-pollinate    │◄─────────┘ after approval
                           │ Update subconscious│
                           └────────────────────┘
 ```
@@ -95,6 +96,25 @@ Every persona created by `/persona:persona-agent` gets a workspace with this str
 | MEMORY.md | Conscious memory | What you know and carry forward |
 | SUBCONSCIOUS.md | The Unconscious | Patterns you don't see without reflection |
 | AGENTS.md | Ego functions | How you operate — rules, protocols |
+
+## `/subconscious` vs `/reflect`
+
+Two complementary skills for self-awareness:
+
+| | `/subconscious` | `/reflect` |
+|---|---|---|
+| **When** | Before starting work | After completing work |
+| **Speed** | Quick — read + 2-5 bullet points | Deliberate — full entry-by-entry audit |
+| **Output** | Observations only | Classified table + proposed edits |
+| **Edits SUBCONSCIOUS.md?** | Never | Yes, after user approval |
+| **Purpose** | "Am I about to repeat a mistake?" | "What should I carry forward?" |
+
+`/reflect` classifies each SUBCONSCIOUS.md entry as:
+- **KEEP** — still true, still preventing mistakes
+- **DISTILL** — true but over-specific, rewrite as a generalized pattern
+- **STALE** — no longer relevant, remove
+- **PROMOTE** — learned today, add to subconscious
+- **MISPLACED** — project knowledge (not a self-pattern), move to MEMORY.md
 
 ## Configuration
 
