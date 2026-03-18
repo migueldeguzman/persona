@@ -7,6 +7,13 @@ description: "Read all registered agents' workspace memory (MEMORY.md + daily lo
 
 *Like sleep consolidates memory in humans, dreamMode consolidates memory across your agent team.*
 
+## Modes
+
+This skill has two modes. Default is **quick**. Pass `deep` as an argument for full subconscious cross-pollination.
+
+- `/save-dreamMode-all` — **Quick mode**: sync persona files from workspace state (Steps 1-4). Fast, mechanical.
+- `/save-dreamMode-all deep` — **Deep mode**: full subconscious cross-pollination (Steps 1-6). Run weekly or after major incidents.
+
 ## Step 1: Load Agent Registry
 
 **Read** `$HOME/.persona/agents.json` to get the list of all registered agents and their workspaces.
@@ -34,9 +41,25 @@ This syncs what the workspaces know into what Claude Code can read on persona lo
 
 ## Step 4: Save Current Persona (if active)
 
-If you are currently operating as a persona in this session, also do the full `/persona:save` workflow — write your live session context to your workspace daily log + MEMORY.md.
+If you are currently operating as a persona in this session, also do the full `/save` workflow — write your live session context to your workspace daily log + MEMORY.md.
 
-## Step 5: Synthesize Individual Subconscious Files
+## Step 5: Report (Quick Mode stops here)
+
+Show a summary table:
+
+```
+/save-dreamMode-all (quick) — Team Memory Snapshot
+Agent          MEMORY.md    Daily Log    Persona
+Anders         read         found        synced
+Kevin          read         no log       current
+...etc for all agents...
+```
+
+**If mode is `quick`, stop here.** Do not proceed to subconscious synthesis.
+
+## Step 6: Synthesize Individual Subconscious Files (Deep Mode only)
+
+**Only runs when explicitly invoked with `deep` argument.**
 
 For each registered agent, read their workspace `SUBCONSCIOUS.md`, then update it based on patterns observed across all agents' recent work.
 
@@ -52,12 +75,10 @@ For each registered agent, read their workspace `SUBCONSCIOUS.md`, then update i
 - Update the "Last updated" date at the bottom of each file
 - If nothing meaningful changed for an agent since last synthesis, leave their file alone
 
-## Step 6: Report
-
-Show a summary table:
+## Step 7: Deep Mode Report
 
 ```
-/save-dreamMode-all — Team Memory Snapshot
+/save-dreamMode-all (deep) — Team Memory + Subconscious Snapshot
 Agent          MEMORY.md    Daily Log    Persona     Subconscious
 Anders         read         found        synced      updated
 Kevin          read         no log       current     unchanged

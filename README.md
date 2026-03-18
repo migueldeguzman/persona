@@ -6,38 +6,65 @@ Create persistent AI personas with memory, self-reflection, and team synchroniza
 
 ## What This Is
 
-Five interrelated skills that give your Claude Code agent persistent identity:
+Nine skills that give your Claude Code agent persistent identity, self-awareness, and team coordination:
 
+### Identity & Memory
 | Skill | Command | What It Does |
 |-------|---------|-------------|
 | **persona-agent** | `/persona:persona-agent` | Create a new AI persona from scratch |
-| **save** | `/persona:save` | Checkpoint the active persona's memory |
-| **subconscious** | `/persona:subconscious` | Quick pre-task reflection against blind spots |
-| **reflect** | `/persona:reflect` | Structured post-work audit of SUBCONSCIOUS.md |
-| **save-dreamMode-all** | `/persona:save-dreamMode-all` | Sync all personas' memory team-wide |
+| **save** | `/persona:save` | Fast checkpoint — daily log + MEMORY.md + persona file |
+| **save-dreamMode-all** | `/persona:save-dreamMode-all` | Sync all personas' memory team-wide (quick or deep mode) |
+
+### Self-Awareness
+| Skill | Command | What It Does |
+|-------|---------|-------------|
+| **subconscious** | `/persona:subconscious` | Quick pre-task scan against patterns and blind spots |
+| **reflect** | `/persona:reflect` | Structured post-work audit — classify, prune, promote patterns |
+
+### Workflow
+| Skill | Command | What It Does |
+|-------|---------|-------------|
+| **resume** | `/persona:resume` | Pick up where you left off — WIP, open tasks, pending handoffs |
+| **handoff** | `/persona:handoff` | Transfer work context to another persona with structured notes |
+| **triage** | `/persona:triage` | Prioritize your work queue — what to work on first and why |
+
+### Observability
+| Skill | Command | What It Does |
+|-------|---------|-------------|
+| **metrics** | `/persona:metrics` | Dashboard of system health — activity, memory sizes, staleness |
 
 ## The Persona Lifecycle
 
 ```
-  /persona-agent          /save                /subconscious         /reflect
-  ┌─────────────┐    ┌──────────────┐    ┌──────────────────┐  ┌──────────────────┐
-  │ CREATE       │    │ CHECKPOINT   │    │ PRE-TASK SCAN    │  │ POST-WORK AUDIT  │
-  │              │    │              │    │                  │  │                  │
-  │ SOUL.md      │───>│ Daily log    │───>│ Pattern check    │  │ Classify entries │
-  │ IDENTITY.md  │    │ MEMORY.md    │    │ Blind spots      │  │ KEEP / DISTILL / │
-  │ MEMORY.md    │    │ Persona file │    │ Cross-agent      │  │ STALE / PROMOTE /│
-  │ AGENTS.md    │    │              │    │ lessons          │  │ MISPLACED        │
-  │ SUBCONSCIOUS │    │              │    │                  │  │                  │
-  └─────────────┘    └──────────────┘    └──────────────────┘  └──────────────────┘
-                                               │                       │
-                           /save-dreamMode-all  │                       │
-                          ┌────────────────────┐│                       │
-                          │ TEAM SYNC          ││         ┌─────────────┘
-                          │                    │◄         │ Rewrites
-                          │ Read all agents    │          │ SUBCONSCIOUS.md
-                          │ Cross-pollinate    │◄─────────┘ after approval
-                          │ Update subconscious│
-                          └────────────────────┘
+                        THE PERSONA LIFECYCLE
+
+  ┌─────────────┐         Session Start          Session End
+  │ /persona-   │    ┌──────────┐ ┌─────────┐   ┌──────┐ ┌─────────┐
+  │  agent      │    │ /resume  │ │ /triage │   │ /save│ │ /handoff│
+  │             │    │          │ │         │   │      │ │         │
+  │ CREATE      │    │ Load WIP │ │ What's  │   │ Log  │ │ Pass to │
+  │ workspace   │───>│ Handoffs │ │ urgent? │   │ work │ │ another │
+  │             │    │ Kanban   │ │ P0→P4   │   │      │ │ agent   │
+  └─────────────┘    └──────────┘ └─────────┘   └──────┘ └─────────┘
+
+                        During Work                Post-Work
+                   ┌──────────────────┐     ┌──────────────────┐
+                   │ /subconscious    │     │ /reflect         │
+                   │                  │     │                  │
+                   │ "Am I repeating  │     │ Audit patterns   │
+                   │  a mistake?"     │     │ KEEP / DISTILL / │
+                   │                  │     │ STALE / PROMOTE  │
+                   └──────────────────┘     └──────────────────┘
+
+                        Team Level
+              ┌────────────────────┐  ┌───────────────┐
+              │ /save-dreamMode-all│  │ /metrics      │
+              │                    │  │               │
+              │ quick: sync files  │  │ Activity      │
+              │ deep:  cross-      │  │ Memory health │
+              │   pollinate        │  │ Staleness     │
+              │   subconscious     │  │ Handoff status│
+              └────────────────────┘  └───────────────┘
 ```
 
 ## Installation
@@ -97,9 +124,9 @@ Every persona created by `/persona:persona-agent` gets a workspace with this str
 | SUBCONSCIOUS.md | The Unconscious | Patterns you don't see without reflection |
 | AGENTS.md | Ego functions | How you operate — rules, protocols |
 
-## `/subconscious` vs `/reflect`
+## Skill Relationships
 
-Two complementary skills for self-awareness:
+### Self-Awareness: `/subconscious` vs `/reflect`
 
 | | `/subconscious` | `/reflect` |
 |---|---|---|
@@ -115,6 +142,23 @@ Two complementary skills for self-awareness:
 - **STALE** — no longer relevant, remove
 - **PROMOTE** — learned today, add to subconscious
 - **MISPLACED** — project knowledge (not a self-pattern), move to MEMORY.md
+
+### Session Flow: `/resume` → `/triage` → work → `/save` → `/handoff`
+
+| Skill | When | Duration |
+|-------|------|----------|
+| `/resume` | Session start | 30 seconds — loads WIP, handoffs, kanban |
+| `/triage` | After resume, before work | 1 minute — prioritizes what to do first |
+| `/save` | During or end of session | 30 seconds — fast checkpoint, no pattern analysis |
+| `/handoff` | When passing work to another agent | 1 minute — structured context transfer |
+
+### Team Level: `/save-dreamMode-all` + `/metrics`
+
+| Skill | Frequency | Purpose |
+|-------|-----------|---------|
+| `/save-dreamMode-all` (quick) | Daily | Sync persona files from workspace state |
+| `/save-dreamMode-all deep` | Weekly | Cross-pollinate subconscious patterns |
+| `/metrics` | Ad-hoc | Check system health — who's active, what's stale |
 
 ## Configuration
 
